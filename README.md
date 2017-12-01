@@ -1,22 +1,20 @@
 # HP-MSA
 Pages We Need:
 
-Login Page
-  -goes to dashboard upon login
-  -press top button to load storage list
+Login Page: Andrew 
+goes to dashboard upon login
+press top button to load storage list
   -storage list
   
-Dashboard
+Dashboard: Aisiri
 
-Disk Info 
+Disk Info: Matthew
 
-Health Alerts
-
-Settings
+Health Alerts: Joy
   
 Functional Components:
-  back button
-  menu bar on top 
-  search bar
-  side menu
-  dashlets
+back button: Quyen
+menu bar on top: Yue Ying
+search bar: Quyen
+side menu: Aisiri
+dashlets: Matthew
