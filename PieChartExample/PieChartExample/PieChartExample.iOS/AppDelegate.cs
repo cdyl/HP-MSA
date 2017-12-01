@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace HP_MSA.iOS
+namespace PieChartExample.iOS
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
 	// User Interface of the application, as well as listening (and optionally responding) to 
@@ -24,7 +24,7 @@ namespace HP_MSA.iOS
 		{
 			global::Xamarin.Forms.Forms.Init ();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
-            LoadApplication(new HP_MSA.App ());
+            LoadApplication(new PieChartExample.App ());
 
 			return base.FinishedLaunching (app, options);
 		}

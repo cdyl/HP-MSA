@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("HP_MSA.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("PieChartExample.Droid.Resource", IsApplication=true)]
 
-namespace HP_MSA.Droid
+namespace PieChartExample.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace HP_MSA.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::HP_MSA.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::PieChartExample.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
