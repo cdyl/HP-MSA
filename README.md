@@ -18,3 +18,14 @@ menu bar on top: Yue Ying
 search bar: Quyen
 side menu: Aisiri
 dashlets: Matthew
+
+
+Backend:
+
+Server/ Database: Paul
+Log-in: Hisham
+Storage List: Varun
+Search/ Filter: Sidd
+Dashboard: Varun
+Disk Info: Hisham
+Health Alerts: Paul
