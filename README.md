@@ -6,9 +6,9 @@ goes to dashboard upon login
 press top button to load storage list
   -storage list
   
-Dashboard: Aisiri
+Dashboard: Matthew
 
-Disk Info: Matthew
+Disk Info: Aisiri
 
 Health Alerts: Joy
   
