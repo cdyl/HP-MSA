@@ -150,6 +150,9 @@
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hpelogo.png" />
+  </ItemGroup>
   <Import Project="..\HP_MSA\HP_MSA.projitems" Label="Shared" Condition="Exists('..\HP_MSA\HP_MSA.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

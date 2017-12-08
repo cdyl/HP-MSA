@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HP_MSA.Dashboard"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+              Title="Dashboard">
+    <ContentPage.Content>
+        <ScrollView Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="200" />
+                </Grid.RowDefinitions>
+                <Button Text="Storage List" Clicked="moveToStorageList" />
+                <oxy:PlotView Grid.Row="1" Model="{Binding displayCapacity}" ></oxy:PlotView>
+                <oxy:PlotView Grid.Row="2" Model="{Binding displaySystemsByRegion}" Controller="{Binding controllerSystemsByRegion}" ></oxy:PlotView>
+                <oxy:PlotView Grid.Row="3" Model="{Binding displaySystemsByFeature}" ></oxy:PlotView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

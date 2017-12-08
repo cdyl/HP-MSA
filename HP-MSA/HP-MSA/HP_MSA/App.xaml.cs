@@ -13,7 +13,7 @@ namespace HP_MSA
 		{
 			InitializeComponent();
 
-			MainPage = new HP_MSA.MainPage();
+			MainPage = new NavigationPage(new HP_MSA.LoginPage());
 		}
 
 		protected override void OnStart ()
