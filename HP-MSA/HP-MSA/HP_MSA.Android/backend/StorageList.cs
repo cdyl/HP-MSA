@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
-//using MySql.Data.dll;
 
 namespace HP_MSA.backend
 {
@@ -16,7 +15,7 @@ namespace HP_MSA.backend
             try
             {
                 MySqlConnection sqlconn;
-                string connsqlstring = "Server=your.ip.address;Port=3306;database=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;User Id=gordon;Password=password;charset=utf8";
+                string connsqlstring = "Server=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;Port=3306;database=HP-MSA;User Id=gordon;Password=password;charset=utf8";
                 sqlconn = new MySqlConnection(connsqlstring);
                 sqlconn.Open();
                 string queryString = "select count(0) from ACCOUNT";
