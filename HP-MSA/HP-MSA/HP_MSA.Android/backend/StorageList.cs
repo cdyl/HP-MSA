@@ -30,11 +30,6 @@ namespace HP_MSA.backend
                 Console.WriteLine(ex.Message);
             }
             return sList;
-<<<<<<< HEAD
         }
-=======
-        } 
->>>>>>> 972a355e5b48fdc749d42f55f7c5cb9635408fce
-
     }
 }
