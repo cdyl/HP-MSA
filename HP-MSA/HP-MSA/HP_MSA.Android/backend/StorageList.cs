@@ -16,7 +16,7 @@ namespace HP_MSA.backend
             try
             {
                 MySqlConnection sqlconn;
-                string connsqlstring = "Server=your.ip.address;Port=3306;database=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;User Id=gordon;Password=password;charset=utf8";
+                string connsqlstring = "Server=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;Port=3306;database=HP-MSA;User Id=gordon;Password=password;charset=utf8";
                 sqlconn = new MySqlConnection(connsqlstring);
                 sqlconn.Open();
                 string queryString = "select count(0) from ACCOUNT";
@@ -30,7 +30,11 @@ namespace HP_MSA.backend
                 Console.WriteLine(ex.Message);
             }
             return sList;
+<<<<<<< HEAD
         }
+=======
+        } 
+>>>>>>> 972a355e5b48fdc749d42f55f7c5cb9635408fce
 
     }
 }
