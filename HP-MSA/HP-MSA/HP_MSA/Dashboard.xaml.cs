@@ -18,5 +18,11 @@ namespace HP_MSA
             NavigationPage.SetHasBackButton(this, false);
             InitializeComponent ();
 		}
+
+        void moveToStorageList(object sender, EventArgs args)
+        {
+            Navigation.PushAsync(new StorageList());
+        }
 	}
+
 }

@@ -11,10 +11,12 @@
                     <RowDefinition Height="200" />
                     <RowDefinition Height="200" />
                     <RowDefinition Height="200" />
+                    <RowDefinition Height="200" />
                 </Grid.RowDefinitions>
-                <oxy:PlotView Grid.Row="0" Model="{Binding displayCapacity}" ></oxy:PlotView>
-                <oxy:PlotView Grid.Row="1" Model="{Binding displaySystemsByRegion}" Controller="{Binding controllerSystemsByRegion}" ></oxy:PlotView>
-                <oxy:PlotView Grid.Row="2" Model="{Binding displaySystemsByFeature}" ></oxy:PlotView>
+                <Button Text="Storage List" Clicked="moveToStorageList" />
+                <oxy:PlotView Grid.Row="1" Model="{Binding displayCapacity}" ></oxy:PlotView>
+                <oxy:PlotView Grid.Row="2" Model="{Binding displaySystemsByRegion}" Controller="{Binding controllerSystemsByRegion}" ></oxy:PlotView>
+                <oxy:PlotView Grid.Row="3" Model="{Binding displaySystemsByFeature}" ></oxy:PlotView>
             </Grid>
         </ScrollView>
     </ContentPage.Content>
