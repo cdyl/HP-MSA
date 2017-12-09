@@ -24,16 +24,15 @@ namespace HP_MSA
 
         void EntryCompleted(object sender, EventArgs e)
         {
-            try
-            {
+            try{
                 MySqlConnection sqlconn;
-                string connsqlstring = "Server=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;Port=3306;database=HP-MSA;User Id=gordon;Password=password;charset=utf8";
+                //string connsqlstring = "Server=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;Port=3306;database=HP-MSA;User Id=gordon;Password=password;charset=utf8";
+                string connsqlstring = "server=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;uid=gordon;pwd=password;database=HP-MSA";
                 sqlconn = new MySqlConnection(connsqlstring);
                 sqlconn.Open();
                 var password = ((Entry)sender).Text;
                 var username = UsernameField.Text;
-                string queryString = "SELECT * FROM msa.users WHERE username = {username} AND pwd = {password}";
-                MySqlCommand sqlcmd = new MySqlCommand(queryString, sqlconn);
+                MySqlCommand sqlcmd = new MySqlCommand("SELECT * FROM msa.users WHERE username = '" + username + "' AND pwd = '" + password + "'", sqlconn);
                 String result = sqlcmd.ExecuteScalar().ToString();
                 if (result != "")
                 {
@@ -41,8 +40,7 @@ namespace HP_MSA
                 }
                 sqlconn.Close();
             }
-            catch (Exception ex)
-            {
+            catch(Exception ex){
                 Console.WriteLine(ex.Message);
             }
 
