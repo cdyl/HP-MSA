@@ -1,20 +1,1 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace HP_MSA
-{
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StorageList : ContentPage
-    {
-        public StorageList()
-        {
-            InitializeComponent();
-        }
-    }
-}
+﻿using System; using System.Collections.Generic; using System.Linq; using System.Text; using System.Threading.Tasks;  using Xamarin.Forms; using Xamarin.Forms.Xaml;  namespace HP_MSA {     [XamlCompilation(XamlCompilationOptions.Compile)]     public partial class StorageList : ContentPage     {         public StorageList()         {             InitializeComponent();             List<Unit> items = new List<Unit>();             items.Add(new Unit() { CompanyName = "CompanyNameTest", SerialNumber = "311XYZ" });             Storage.ItemsSource = items;         }          void OnItemSelected(object sender, SelectedItemChangedEventArgs e)         {             Navigation.PushAsync(new DiskInfo());         }     }      public class Unit     {         public String CompanyName { get; set; }         public String SerialNumber { get; set; }            }       }; 
