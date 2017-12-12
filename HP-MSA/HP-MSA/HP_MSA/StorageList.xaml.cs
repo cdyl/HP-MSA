@@ -1,20 +1,1 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace HP_MSA
-{
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StorageList : ContentPage
-    {
-        public StorageList(string companyName)
-        {
-            InitializeComponent();
-        }
-    }
-}
+﻿using System; using System.Collections.Generic; using System.Linq; using System.Text; using System.Text.RegularExpressions; using System.Threading.Tasks; using System.IO; using System.Net;  using Xamarin.Forms; using Xamarin.Forms.Xaml;  namespace HP_MSA {     [XamlCompilation(XamlCompilationOptions.Compile)]     public partial class StorageList : ContentPage     {         public StorageList(string companyName)         {             InitializeComponent();             List<Unit> items = new List<Unit>();             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri("http://54.173.140.216:8080"));             var postData = "query=SELECT * FROM msa.data WHERE companyName = '" + companyName + "'";             var data = Encoding.ASCII.GetBytes(postData);             request.Method = "POST";             request.ContentType = "application/x-www-form-urlencoded";             request.ContentLength = data.Length;             using (var stream = request.GetRequestStream())             {                 stream.Write(data, 0, data.Length);             }             var response = (HttpWebResponse)request.GetResponse();             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();             List<String> raw_data = new List<String>();             Regex rgx = new Regex(@"\[.*?\]");             foreach (Match match in rgx.Matches(responseString))             {                 raw_data.Add(match.Value);             }             string result = responseString.Substring(1, responseString.Length - 1);             items.Add(new Unit() { CompanyName = "CompanyNameTest", SerialNumber = "311XYZ" });             //Storage.ItemsSource = items;         }          //void OnItemSelected(object sender, SelectedItemChangedEventArgs e)         //{         //    Navigation.PushAsync(new DiskInfo());         //}     }      public class Unit     {         public String CompanyName { get; set; }         public String SerialNumber { get; set; }      }    }; 
