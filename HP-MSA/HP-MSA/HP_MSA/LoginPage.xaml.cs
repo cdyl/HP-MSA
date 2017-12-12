@@ -37,9 +37,28 @@ namespace HP_MSA
             }
             var response = (HttpWebResponse)request.GetResponse();
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            int count = 0;
+            int startIndex = 0;
+            int endIndex = 0;
+            for (int i = 0; i < responseString.Length; i++)
+            {
+                if (responseString[i] == '\"')
+                {
+                    count++;
+                }
+                if(count == 5 && startIndex == 0){
+                    startIndex = i + 1;
+                }
+                if(count == 6){
+                    endIndex = i - 1;
+                    break;
+                }
+            }
+            int length = endIndex - startIndex + 1;
+            string companyName = responseString.Substring(startIndex, length);
             if (responseString != "")
             {
-                Navigation.PushAsync(new Dashboard());
+                Navigation.PushAsync(new Dashboard(companyName));
             }
         }
     }

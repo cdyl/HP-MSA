@@ -12,7 +12,7 @@ namespace HP_MSA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StorageList : ContentPage
     {
-        public StorageList()
+        public StorageList(string companyName)
         {
             InitializeComponent();
         }
