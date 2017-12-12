@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.IO;
+using System.Net;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using MySql;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 
 
 namespace HP_MSA
@@ -24,26 +23,24 @@ namespace HP_MSA
 
         void EntryCompleted(object sender, EventArgs e)
         {
-            try{
-                MySqlConnection sqlconn;
-                //string connsqlstring = "Server=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;Port=3306;database=HP-MSA;User Id=gordon;Password=password;charset=utf8";
-                string connsqlstring = "server=msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com;uid=gordon;pwd=password;database=HP-MSA";
-                sqlconn = new MySqlConnection(connsqlstring);
-                sqlconn.Open();
-                var password = ((Entry)sender).Text;
-                var username = UsernameField.Text;
-                MySqlCommand sqlcmd = new MySqlCommand("SELECT * FROM msa.users WHERE username = '" + username + "' AND pwd = '" + password + "'", sqlconn);
-                String result = sqlcmd.ExecuteScalar().ToString();
-                if (result != "")
-                {
-                    Navigation.PushAsync(new Dashboard());
-                }
-                sqlconn.Close();
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri("http://54.173.140.216:8080"));
+            var password = ((Entry)sender).Text;
+            var username = UsernameField.Text;
+            var postData = "query=SELECT * FROM msa.users WHERE username = '" + username + "' AND pwd = '" + password + "'";
+            var data = Encoding.ASCII.GetBytes(postData);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = data.Length;
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
             }
-            catch(Exception ex){
-                Console.WriteLine(ex.Message);
+            var response = (HttpWebResponse)request.GetResponse();
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            if (responseString != "")
+            {
+                Navigation.PushAsync(new Dashboard());
             }
-
         }
     }
 }
