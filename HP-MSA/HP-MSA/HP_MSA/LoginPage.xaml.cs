@@ -19,7 +19,7 @@ namespace HP_MSA
 
         void EntryCompleted(object sender, EventArgs e)
         {
-            var password = ((Entry)sender).Text;
+            var password = PasswordField.Text;
             var username = UsernameField.Text;
             if( password == username)
             {

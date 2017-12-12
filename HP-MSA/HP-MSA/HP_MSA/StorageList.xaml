@@ -1,10 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HP_MSA.StorageList"
-             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
-              Title="Storage List">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  x:Class="HP_MSA.StorageList"
+xmlns:local="clr-namespace:HP_MSA;assembly=FormsListViewSample"
+Title="Storage List"
+
+>
     <ContentPage.Content>
-        
+        <ListView  x:Name="Storage" RowHeight="60" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="White" >
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                                <Label Text = "{Binding CompanyName}" FontSize="20"  HorizontalOptions="Start"   />
+                                <Label Text = "{Binding SerialNumber}" FontSize="20" HorizontalOptions="End" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
