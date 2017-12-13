@@ -11,7 +11,8 @@ Title="Storage List"
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="White" >
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-                                <Label Text = "{Binding SerialNumber}" FontSize="20" HorizontalOptions="End" />
+                                <Label Text = "{Binding systemName}" FontSize="20"  HorizontalOptions="Start" />
+                                <Label Text = "{Binding serialNumber}" FontSize="20" HorizontalOptions="End" />
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>

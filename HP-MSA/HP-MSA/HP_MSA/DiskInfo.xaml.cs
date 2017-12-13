@@ -7,8 +7,9 @@ namespace HP_MSA
 {
     public partial class DiskInfo : ContentPage
     {
-        public DiskInfo()
+        public DiskInfo(HP_MSA.Unit item)
         {
+            
             InitializeComponent();
             //BindingContext = new Details();
             //var systemName = new Label{Text="hi"};

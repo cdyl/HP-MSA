@@ -38,12 +38,8 @@
                         <Label Text="{Binding nodes}" FontSize="25"/> 
                </StackLayout>
                <StackLayout Orientation="Horizontal">
-                        <Label Text = "Cages:" FontSize="25" TextColor="Gray"  />
+                        <Label Text = "Cpg:" FontSize="25" TextColor="Gray"  />
                         <Label Text="{Binding cages}" FontSize="25"/> 
-               </StackLayout>
-               <StackLayout Orientation="Horizontal">
-                        <Label Text = "VLUN's:" FontSize="25" TextColor="Gray"  />
-                        <Label Text="{Binding vlun}" FontSize="25"/> 
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                         <Label Text = "Total Disks:" FontSize="25" TextColor="Gray"  />
