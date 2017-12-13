@@ -56,7 +56,7 @@ namespace HP_MSA
             }
             int length = endIndex - startIndex + 1;
             string companyName = responseString.Substring(startIndex, length);
-            if (responseString != "")
+            if (responseString != "[]")
             {
                 Navigation.PushAsync(new Dashboard(companyName));
             }

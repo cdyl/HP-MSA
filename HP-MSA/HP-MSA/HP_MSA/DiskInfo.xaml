@@ -1,17 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HP_MSA.LoginPage"
-             >
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HP_MSA.DiskInfo"
+    Title="Disk Info">
     <ContentPage.Content>
-        <StackLayout>
-            <Image Margin="30"  Source="hpelogo.png" />
-            <Entry x:Name="UsernameField" Placeholder="Username"
-                VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand" />
-            <Entry x:Name="PasswordField" Placeholder="Password" IsPassword="true"
-                VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand" Completed="EntryCompleted" />
-        </StackLayout>
-    </ContentPage.Content>
+       <StackLayout Orientation="Vertical" Padding="15,15">
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "Last Updated" FontSize="40"   />
+                        <Label Text ="{Binding updated}" FontSize="40"/> 
+               </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                        <Label Text = "System Name:" FontSize="25" TextColor="Gray"   />
+                        <Label Text="{Binding systemName}" FontSize="25"/> 
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "Serial Number" FontSize="25" TextColor="Gray"  />
+                        <Label Text="{Binding serialNumber}" FontSize="25"/> 
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "Family Name:" FontSize="25" TextColor="Gray"  />
+                        <Label Text="{Binding familyName}" FontSize="25"/> 
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "Model:" FontSize="25" TextColor="Gray"  />
+                        <Label Text="{Binding model}" FontSize="25"/> 
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "System Details" FontSize="40"   />
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "OS Version:" FontSize="25" TextColor="Gray"  />
+                        <Label Text="{Binding osVersion}" FontSize="25"/> 
+               </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                        <Label Text = "Nodes:" FontSize="25" TextColor="Gray"  />
+                        <Label Text="{Binding nodes}" FontSize="25"/> 
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "Cages:" FontSize="25" TextColor="Gray"  />
+                        <Label Text="{Binding cages}" FontSize="25"/> 
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "VLUN's:" FontSize="25" TextColor="Gray"  />
+                        <Label Text="{Binding vlun}" FontSize="25"/> 
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "Total Disks:" FontSize="25" TextColor="Gray"  />
+                        <Label Text="{Binding totalDisks}" FontSize="25"/> 
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                        <Label Text = "Virtual Volumes:" FontSize="25" TextColor="Gray"   />
+                        <Label Text="{Binding virtualVolumes}" FontSize="25"/> 
+               </StackLayout>
+       </StackLayout>
+  </ContentPage.Content>
 </ContentPage>
