@@ -5,6 +5,8 @@ Title="Storage List"
 
 >
     <ContentPage.Content>
+        <StackLayout>
+        <SearchBar x:Name="searchcustomer" Placeholder="Search System" TextChanged="SearchBar_OnTextChanged"/>
         <ListView  x:Name="Storage" RowHeight="60" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -19,5 +21,6 @@ Title="Storage List"
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+       </StackLayout>
     </ContentPage.Content>
 </ContentPage>
