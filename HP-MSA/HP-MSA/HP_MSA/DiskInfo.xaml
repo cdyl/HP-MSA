@@ -5,14 +5,18 @@
     x:Class="HP_MSA.DiskInfo"
     Title="Disk Info">
     <ContentPage.Content>
+        <ListView x:Name="Disks" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
        <StackLayout Orientation="Vertical" Padding="15,15">
                <StackLayout Orientation="Horizontal">
-                        <Label Text = "Last Updated" FontSize="40"   />
-                        <Label Text ="{Binding updated}" FontSize="40"/> 
+                        <Label Text = "Last Updated" FontSize="35"   />
+                        <Label Text ="{Binding updated}" FontSize="10" VerticalOptions="Center"/> 
                </StackLayout>
                 <StackLayout Orientation="Horizontal">
                         <Label Text = "System Name:" FontSize="25" TextColor="Gray"   />
-                        <Label Text="{Binding systemName}" FontSize="25"/> 
+                        <Label Text="{Binding systemName}" FontSize="20" VerticalOptions="Center"/> 
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                         <Label Text = "Serial Number" FontSize="25" TextColor="Gray"  />
@@ -20,7 +24,7 @@
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                         <Label Text = "Family Name:" FontSize="25" TextColor="Gray"  />
-                        <Label Text="{Binding familyName}" FontSize="25"/> 
+                        <Label Text="{Binding productFamily}" FontSize="25"/> 
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                         <Label Text = "Model:" FontSize="25" TextColor="Gray"  />
@@ -35,20 +39,24 @@
                </StackLayout>
                 <StackLayout Orientation="Horizontal">
                         <Label Text = "Nodes:" FontSize="25" TextColor="Gray"  />
-                        <Label Text="{Binding nodes}" FontSize="25"/> 
+                        <Label Text="{Binding nodeCount}" FontSize="25"/> 
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                         <Label Text = "Cpg:" FontSize="25" TextColor="Gray"  />
-                        <Label Text="{Binding cages}" FontSize="25"/> 
+                        <Label Text="{Binding cpgCount}" FontSize="25"/> 
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                         <Label Text = "Total Disks:" FontSize="25" TextColor="Gray"  />
-                        <Label Text="{Binding totalDisks}" FontSize="25"/> 
+                        <Label Text="{Binding diskCount}" FontSize="25"/> 
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                         <Label Text = "Virtual Volumes:" FontSize="25" TextColor="Gray"   />
-                        <Label Text="{Binding virtualVolumes}" FontSize="25"/> 
+                        <Label Text="{Binding vvCount}" FontSize="25"/> 
                </StackLayout>
        </StackLayout>
+                        </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
   </ContentPage.Content>
 </ContentPage>
