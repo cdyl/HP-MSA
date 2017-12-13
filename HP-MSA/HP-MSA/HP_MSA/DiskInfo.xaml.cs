@@ -7,16 +7,27 @@ namespace HP_MSA
 {
     public partial class DiskInfo : ContentPage
     {
-        public DiskInfo()
+        public DiskInfo(HP_MSA.Unit item)
         {
+
             InitializeComponent();
-            //BindingContext = new Details();
-            //var systemName = new Label{Text="hi"};
-            //var layout = new StackLayout { Padding = new Thickness(5, 10) };
-            //this.Content = layout;
-            //var label = new Label { Text = "This is a label.", TextColor = Color.FromHex("#77d065"), FontSize = 20 };
-            //layout.Children.Add(systemName);
+            List<Unit> items = new List<Unit>();
+
+            items.Add(new Unit()
+            {
+                updated = item.updated,
+                systemName = item.systemName,
+                serialNumber = item.serialNumber,
+                productFamily = item.productFamily,
+                model = item.model,
+                osVersion = item.osVersion,
+                cpgCount = item.cpgCount,
+                nodeCount = item.nodeCount,
+                diskCount = item.diskCount,
+                vvCount = item.vvCount,
+            });
+
+            Disks.ItemsSource = items;
         }
     }
-
-}
+};

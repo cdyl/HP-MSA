@@ -7,21 +7,25 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
+
 namespace HP_MSA
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Dashboard : ContentPage
 	{
-		public Dashboard ()
+        public string cName = "";
+		public Dashboard (string companyName)
 		{
             BindingContext = new DashletGenerator();
             NavigationPage.SetHasBackButton(this, false);
-            InitializeComponent ();
+            InitializeComponent();
+            this.cName = companyName;
 		}
 
         void moveToStorageList(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new StorageList());
+            Navigation.PushAsync(new StorageList(this.cName));
         }
 	}
 
