@@ -10,6 +10,7 @@ namespace HP_MSA
         public DiskInfo()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, true); 
             //BindingContext = new Details();
             //var systemName = new Label{Text="hi"};
             //var layout = new StackLayout { Padding = new Thickness(5, 10) };
