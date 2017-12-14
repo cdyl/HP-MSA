@@ -24,7 +24,7 @@ namespace HP_MSA
         void EntryCompleted(object sender, EventArgs e)
         {
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri("http://54.173.140.216:8080"));
-            var password = ((Entry)sender).Text;
+            var password = PasswordField.Text;
             var username = UsernameField.Text;
             var postData = "query=SELECT * FROM msa.users WHERE username = '" + username + "' AND pwd = '" + password + "'";
             var data = Encoding.ASCII.GetBytes(postData);
