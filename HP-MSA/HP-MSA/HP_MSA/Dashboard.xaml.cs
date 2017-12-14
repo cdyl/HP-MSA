@@ -17,7 +17,7 @@ namespace HP_MSA
         public string cName = "";
 		public Dashboard (string companyName)
 		{
-            BindingContext = new DashletGenerator();
+            BindingContext = new DashletGenerator(companyName);
             NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             this.cName = companyName;
