@@ -19,7 +19,7 @@ namespace HP_MSA
 
 		public Dashboard (string companyName)
 		{
-            BindingContext = new DashletGenerator();
+            BindingContext = new DashletGenerator(companyName);
             InitializeComponent();
             this.cName = companyName;
 

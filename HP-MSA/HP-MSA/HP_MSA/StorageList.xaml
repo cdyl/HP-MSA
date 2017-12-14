@@ -23,11 +23,11 @@ Title="Storage List"
                     <ColumnDefinition Width="30" />
                 </Grid.ColumnDefinitions>
                 <Button Image="back.png" Grid.Row="0" Grid.Column="0" Clicked="moveToDashboard"/>
-                <Button Image="search.png" Grid.Row="0" Grid.Column="1" />
+                <Button Image="search.png" Grid.Row="0" Grid.Column="1" Clicked="toggleVisibility" />
                 <Button Text="Dashboard" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="2" Clicked="moveToDashboard" />
                 <Button Image="user.png" Grid.Row="0" HorizontalOptions="End" Grid.Column="3" Clicked="moveToMenu" />
             </Grid>
-        <SearchBar x:Name="searchcustomer" Placeholder="Search System" TextChanged="SearchBar_OnTextChanged"/>
+        <SearchBar x:Name="searchcustomer" Placeholder="Search System" TextChanged="SearchBar_OnTextChanged" />
         <ListView  x:Name="Storage" RowHeight="60" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>

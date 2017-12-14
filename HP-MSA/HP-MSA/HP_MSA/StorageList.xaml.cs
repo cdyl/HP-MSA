@@ -15,9 +15,12 @@ namespace HP_MSA
     public partial class StorageList : ContentPage
     {
         List<Unit> items = new List<Unit>();
+        private string companyName { get; set; }
         public StorageList(string companyName)
         {
             InitializeComponent();
+            this.companyName = companyName;
+            searchcustomer.IsVisible = false;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri("http://54.173.140.216:8080"));
             var postData = "query=SELECT * FROM msa.data WHERE companyName = '" + companyName + "'";
             var data = Encoding.ASCII.GetBytes(postData);
@@ -66,7 +69,22 @@ namespace HP_MSA
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new DiskInfo((Unit) e.SelectedItem));
+            App.Current.MainPage = new DiskInfo((Unit)e.SelectedItem,companyName);
+        }
+
+        void moveToDashboard(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Dashboard(companyName);
+        }
+
+        void moveToMenu(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Menu(this);
+        }
+
+        void toggleVisibility(object sender, EventArgs e)
+        {
+            searchcustomer.IsVisible=!searchcustomer.IsVisible;
         }
     }
 
