@@ -5,11 +5,6 @@ import cherrypy
 import mysql.connector
 import json
 
-cnx = mysql.connector.connect(user='gordon', password='password',
-                              host='msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com',
-                              database='msa')
-
-
 
 @cherrypy.expose
 class StringGeneratorWebService(object):
@@ -21,6 +16,10 @@ class StringGeneratorWebService(object):
         return "NO FXN"
 
     def POST(self, query):
+        cnx = mysql.connector.connect(user='gordon', password='password',
+                                      host='msa.cz0sfiru3pto.us-east-1.rds.amazonaws.com',
+                                      database='msa')
+
         responseArr=list()
         cursor = cnx.cursor()
         cursor.execute(query)
@@ -30,6 +29,8 @@ class StringGeneratorWebService(object):
 
         return json.dumps(responseArr)
         cursor.close()
+
+        cxn.close()
 
     def PUT(self, another_string):
         return "NO FXN"
