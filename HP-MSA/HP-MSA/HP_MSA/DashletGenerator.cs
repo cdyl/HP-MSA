@@ -29,7 +29,7 @@ namespace HP_MSA
         {
             List<Unit> items = new List<Unit>();
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri("http://54.173.140.216:8080"));
-            var postData = "query=SELECT `capacity.total.freeTiB`, systemName, serialNumber, `location.region` FROM msa.data WHERE companyName = '" + companyName + "'";
+            var postData = "query=SELECT `capacity.total.freeTiB`, systemName, serialNumber, `location.region`, `capacity.total.sizeTiB` FROM msa.data WHERE companyName = '" + companyName + "'";
             var data = Encoding.ASCII.GetBytes(postData);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
@@ -63,7 +63,8 @@ namespace HP_MSA
                     capacity = unitInfo[0],
                     systemName = unitInfo[1],
                     serialNumber = unitInfo[2],
-                    region = unitInfo[3]
+                    region = unitInfo[3],
+                    total_cap = unitInfo[4]
                 });
                 region_list.Add((unitInfo[3]));
                 region_set.Add(unitInfo[3]);
@@ -78,7 +79,7 @@ namespace HP_MSA
             float avg_free = 0;
             for (int i = 0; i < items.Count; i++)
             {
-                avg_allocated += (100 - float.Parse(items[i].capacity));
+                avg_allocated += (float.Parse(items[i].total_cap) - float.Parse(items[i].capacity));
                 avg_free += float.Parse(items[i].capacity);
             }
             avg_allocated /= items.Count();
