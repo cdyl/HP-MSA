@@ -5,19 +5,22 @@ Title="Storage List"
 
 >
     <ContentPage.Content>
+        <StackLayout>
+        <SearchBar x:Name="searchcustomer" Placeholder="Search System" TextChanged="SearchBar_OnTextChanged"/>
         <ListView  x:Name="Storage" RowHeight="60" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="White" >
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-                                <Label Text = "{Binding CompanyName}" FontSize="20"  HorizontalOptions="Start"   />
-                                <Label Text = "{Binding SerialNumber}" FontSize="20" HorizontalOptions="End" />
+                                <Label Text = "{Binding systemName}" FontSize="20"  HorizontalOptions="Start" />
+                                <Label Text = "{Binding serialNumber}" FontSize="20" HorizontalOptions="End" />
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+       </StackLayout>
     </ContentPage.Content>
 </ContentPage>
