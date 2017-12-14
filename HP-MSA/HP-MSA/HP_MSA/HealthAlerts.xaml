@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HP_MSA.HealthAlerts">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#004770">
+                <Grid.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="0,0,0,0" />
+                        <On Platform="iOS" Value="0,20,0,0" />
+                    </OnPlatform>
+                </Grid.Padding>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <Button Image="back.png" Grid.Row="0" Grid.Column="0" Clicked="goBack"/>
+                <!--<Button Image="search.png" Grid.Row="0" Grid.Column="1" />
+                <Button Text="Dashboard" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="2" Clicked="moveToDashboard" />
+                <Button Image="user.png" Grid.Row="0" HorizontalOptions="End" Grid.Column="3" Clicked="moveToMenu" />-->
+            </Grid>
+            <ListView x:Name="Alerts" RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding StorageID}" FontSize="20" HorizontalOptions="Start" />
+                                    <Label Text="{Binding AlertMessage}" FontSize="15" HorizontalOptions="End" TextColor="Gray" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

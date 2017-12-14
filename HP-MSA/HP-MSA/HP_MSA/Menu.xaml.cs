@@ -31,7 +31,7 @@ namespace HP_MSA
 
         private void healthAlerts(Object o, EventArgs e)
         {
-            //App.Content.MainPage = new HealthAlerts(this);
+            App.Current.MainPage = new HealthAlerts(this);
         }
 	}
 }
