@@ -27,7 +27,8 @@ Title="Storage List"
                 <Button Text="Dashboard" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="2" Clicked="moveToDashboard" />
                 <Button Image="user.png" Grid.Row="0" HorizontalOptions="End" Grid.Column="3" Clicked="moveToMenu" />
             </Grid>
-            <ListView  x:Name="Storage" RowHeight="60" ItemSelected="OnItemSelected">
+        <SearchBar x:Name="searchcustomer" Placeholder="Search System" TextChanged="SearchBar_OnTextChanged"/>
+        <ListView  x:Name="Storage" RowHeight="60" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
