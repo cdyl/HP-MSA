@@ -13,10 +13,12 @@ namespace HP_MSA
 	public partial class Menu : ContentPage
 	{
         private ContentPage lastPage { get; set; }
-		public Menu (ContentPage lastPage)
+        private string companyName;
+		public Menu (ContentPage lastPage, string companyName)
 		{
             this.lastPage = lastPage;
             InitializeComponent ();
+            this.companyName = companyName;
 		}
 
         private void goBack(Object o, EventArgs e)
@@ -31,7 +33,7 @@ namespace HP_MSA
 
         private void healthAlerts(Object o, EventArgs e)
         {
-            App.Current.MainPage = new HealthAlerts(this);
+            App.Current.MainPage = new HealthAlerts(this,companyName);
         }
 	}
 }

@@ -33,7 +33,7 @@ namespace HP_MSA
 
         private void moveToMenu(object sender, EventArgs args)
         {
-            App.Current.MainPage = new Menu(this);
+            App.Current.MainPage = new Menu(this,cName);
         }
 	}
 

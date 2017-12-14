@@ -40,7 +40,7 @@ namespace HP_MSA
 
         void moveToMenu(Object o, EventArgs e)
         {
-            App.Current.MainPage = new Menu(this);
+            App.Current.MainPage = new Menu(this,companyName);
         }
     }
 };

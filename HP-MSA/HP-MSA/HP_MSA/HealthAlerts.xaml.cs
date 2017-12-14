@@ -14,12 +14,22 @@ namespace HP_MSA
 	{
         private Menu lastPage { get; set; }
 
-        public HealthAlerts (Menu menu)
+        public HealthAlerts (Menu menu, string companyName)
 		{
             InitializeComponent();
             lastPage = menu;
+            List<List<String>> alerts = HealthAlertsGenerator.alert(companyName);
             List<Alert> items = new List<Alert>();
-            items.Add(new Alert() { StorageID = "DKSJ38JD", AlertMessage = "Storage Space Low" });
+            foreach (List<String> alert in alerts)
+            {
+                items.Add(new Alert() { StorageID = alert[1], AlertMessage = "Percent Free Space: " + alert[0] + "%" });
+            }
+
+            //items.Add(new Alert() { StorageID = "DKSJ38JD", AlertMessage = "Storage Space Low" });
+            if(items.Count==0)
+            {
+                items.Add(new Alert() { StorageID = "No alerts detected", AlertMessage = "" });
+            }
             Alerts.ItemsSource = items;
         }
         

@@ -20,6 +20,7 @@
       <DependentUpon>HealthAlerts.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)HealthAlertsGenerator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -95,4 +96,3 @@
     </EmbeddedResource>
   </ItemGroup>
 </Project>
-
