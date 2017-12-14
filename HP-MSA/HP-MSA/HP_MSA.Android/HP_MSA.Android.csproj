@@ -210,6 +210,9 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <AndroidResource Include="Resources\Drawable\search.png" />
+    <AndroidResource Include="Resources\Drawable\user.png" />
+    <AndroidResource Include="Resources\Drawable\back.png" />
   </ItemGroup>
   <Import Project="..\HP_MSA\HP_MSA.projitems" Label="Shared" Condition="Exists('..\HP_MSA\HP_MSA.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

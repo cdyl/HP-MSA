@@ -58,7 +58,8 @@ namespace HP_MSA
             string companyName = responseString.Substring(startIndex, length);
             if (responseString != "[]")
             {
-                Navigation.PushAsync(new Dashboard(companyName));
+                //Navigation.PushAsync(new Dashboard(companyName));
+                App.Current.MainPage = new Dashboard(companyName);
             }
         }
     }

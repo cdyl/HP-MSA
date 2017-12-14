@@ -7,9 +7,12 @@ namespace HP_MSA
 {
     public partial class DiskInfo : ContentPage
     {
-        public DiskInfo(HP_MSA.Unit item)
+        private string companyName { get; set; }
+
+        public DiskInfo(HP_MSA.Unit item,string companyName)
         {
 
+            this.companyName = companyName;
             InitializeComponent();
             List<Unit> items = new List<Unit>();
 
@@ -28,6 +31,16 @@ namespace HP_MSA
             });
 
             Disks.ItemsSource = items;
+        }
+
+        void moveToStorageList(Object o, EventArgs e)
+        {
+            App.Current.MainPage = new StorageList(companyName);
+        }
+
+        void moveToMenu(Object o, EventArgs e)
+        {
+            App.Current.MainPage = new Menu(this);
         }
     }
 };
