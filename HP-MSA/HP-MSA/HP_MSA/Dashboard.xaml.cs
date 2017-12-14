@@ -14,18 +14,26 @@ namespace HP_MSA
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Dashboard : ContentPage
 	{
+
         public string cName = "";
+
 		public Dashboard (string companyName)
 		{
             BindingContext = new DashletGenerator();
-            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             this.cName = companyName;
+
 		}
 
         void moveToStorageList(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new StorageList(this.cName));
+            //Navigation.PushAsync(new StorageList(this.cName));
+            App.Current.MainPage = new StorageList(this.cName);
+        }
+
+        private void moveToMenu(object sender, EventArgs args)
+        {
+            App.Current.MainPage = new Menu(this);
         }
 	}
 

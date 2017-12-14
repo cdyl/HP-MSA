@@ -182,6 +182,9 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <EmbeddedResource Include="Resources\user.png" />
+    <EmbeddedResource Include="Resources\search.png" />
+    <EmbeddedResource Include="Resources\back.png" />
   </ItemGroup>
   <Import Project="..\HP_MSA\HP_MSA.projitems" Label="Shared" Condition="Exists('..\HP_MSA\HP_MSA.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
